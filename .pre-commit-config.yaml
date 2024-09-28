@@ -1,0 +1,35 @@
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+    -   id: requirements-txt-fixer
+    -   id: check-case-conflict
+    -   id: check-ast
+    -   id: end-of-file-fixer
+    -   id: trailing-whitespace
+    -   id: check-yaml
+    -   id: check-toml
+    -   id: check-xml
+    -   id: detect-private-key
+
+-   repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.1.11
+    hooks:
+
+    -   id: ruff  # will always PASS -> exit-zero
+        name: ruff report_linter.txt
+        types_or: [ python, pyi, jupyter ]
+        args: [--output-file=report_linter.txt, --exit-zero]
+
+    -   id: ruff  # will always PASS -> exit-zero
+        name: ruff report_todos.txt
+        types_or: [ python, pyi, jupyter ]
+        args: [--output-file=report_todos.txt, --select=FIX, --exit-zero]
+
+    -   id: ruff  # will always PASS -> exit-zero
+        name: ruff report_vulnerabilities.txt
+        types_or: [ python, pyi, jupyter ]
+        args: [--output-file=report_vulnerabilities.txt, --select=S, --exit-zero]
+
+    -   id: ruff-format
+        types_or: [ python, pyi, jupyter ]

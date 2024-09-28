@@ -1,0 +1,44 @@
+[tool.poetry]
+name = "tippyreloaded"
+version = "0.1.0"
+description = ""
+authors = ["Dominik Bauer"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+
+python = "3.10"
+flask = "2.1.2"
+flask-limiter = "^3.8.0"
+ruff = "^0.6.7"
+pydantic = "^2.9.2"
+scipy = "^1.14.1"
+beautifulsoup4 = "^4.12.3"
+requests = "^2.32.3"
+rapidfuzz = "^3.10.0"
+
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.6.7"
+vulture = "^2.12"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+line-length = 88
+indent-width = 4
+target-version = "py310"
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
+
+[tool.ruff.lint]
+ignore = [ "PD901"]  # pandas ignore df notation
+extend-select = [
+  "ALL",
+]

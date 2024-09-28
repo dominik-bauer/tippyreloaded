@@ -1,0 +1,193 @@
+Pr
+1 Leverkusen 
+2 Bayern 
+3 BVB
+4 Wolfsburg  
+5 Leipzig 
+6 Hoffenheim
+7 Gladbach 
+8 Frankfurt  
+9 Freiburg 
+10 Union
+11 Stuttgart 
+12 Köln 
+13 Mainz 
+14 Werder 
+15 Augsburg  
+16 Heidenheim
+17 Darmstadt
+18 Bochum
+1 Hsv
+2 Düsseldorf 
+3 Schalke 
+4 KSC 
+5 St. Pauli 
+6 Hannover 
+7 Fürth 
+8 Hertha 
+9 Nürnberg
+10 Paderborn 
+11 Kiel 
+12 Magdeburg 
+13 Rostock 
+14 Lautern
+15 Osnabrück 
+16 Elversberg 
+17 Wiesbaden 
+18 Braunschweig
+
+Mcl
+1 BVB
+2 Bayern 
+3 Leverkusen
+4 Union
+5 Leipzig 
+6 Werder 
+7 Gladbach 
+8 Köln
+9 Freiburg 
+10 Wolfsburg
+11 Stuttgart 
+12 Frankfurt
+13 Mainz 
+14 Hoffenheim
+15 Bochum
+16 Augsburg
+17 Darmstadt
+18 Heidenheim
+1 Hsv
+2 Düsseldorf 
+3 St. Pauli
+4 KSC 
+5 Osnabrück 
+6 Magdeburg 
+7 Kiel
+8 Lautern
+9 Schalke
+10 Paderborn 
+11 Fürth
+12 Nürnberg
+13 Rostock 
+14 Wiesbaden
+15 Hannover
+16 Elversberg 
+17 Hertha 
+18 Braunschweig 
+
+
+
+Dmk
+1 Bayern München
+2 Borussia Dortmund
+3 RB Leipzig
+4 Bayer Leverkusen
+5 Union Berlin
+6 SC Freiburg
+7 Eintracht Frankfurt
+8 1. FC Köln
+9 Borussia Mönchengladbach
+10 Werder Bremen
+11 TSG Hoffenheim
+12 VfL Wolfsburg
+13 FSV Mainz
+14 SV Darmstadt 98
+15 FC Augsburg
+16 VfL Bochum
+17 1. FC Heidenheim 1846
+18 VfB Stuttgart
+1 Hamburger SV
+2 Schalke
+3 FC St. Pauli
+4 Fortuna Düsseldorf
+5 Hannover
+6 Karlsruher SC
+7 Holstein Kiel
+8 Hertha BSC
+9 1. FC Nürnberg
+10 SpVgg Greuther Fürth
+11 SC Paderborn
+12 1. FC Kaiserslautern
+13 SV 07 Elversberg
+14 SV Wehen Wiesbaden
+15 FC Hansa Rostock
+16 Eintracht Braunschweig
+17 VfL 1899 Osnabrück
+18 FC Magdeburg
+
+
+Ncl
+Borussia Dortmund
+Bayer Leverkusen
+Bayern München
+RB Leipzig
+SC Freiburg
+FC Union Berlin
+Borussia Mönchengladbach
+VfL Wolfsburg
+Eintracht Frankfurt
+Hoffenheim
+VfB Stuttgart
+SV Darmstadt 98
+FSV Mainz 05
+FC Köln
+FC Augsburg
+Werder Bremen
+FC Heidenheim 1846
+VfL Bochum
+Fortuna Düsseldorf
+Hamburger SV
+FC Schalke 04
+FC St Pauli
+Karlsruher SC
+SC Paderborn 07
+FC Magdeburg
+Hannover 96
+Holstein Kiel
+SpVgg Greuther Fürth
+FC Hansa Rostock
+FC Nürnberg
+SV Wehen Wiesbaden
+Hertha BSC
+FC Kaiserslautern
+Eintracht Braunschweig
+VfL Osnabrück
+SV 07 Elversberg
+
+
+Brd
+Bayern München
+Bayer Leverkusen
+RB Leipzig
+Borussia Dortmund
+FC Union Berlin
+SC Freiburg
+Borussia Mönchengladbach
+Eintracht Frankfurt
+VfL Wolfsburg
+VfB Stuttgart
+FC Köln
+FSV Mainz 05
+Hoffenheim
+Werder Bremen
+FC Augsburg
+FC Heidenheim 1846
+SV Darmstadt 98
+VfL Bochum
+Hamburger SV
+Fortuna Düsseldorf
+Karlsruher SC
+Hannover 96
+FC St Pauli
+FC Schalke 04
+Holstein Kiel
+SC Paderborn 07
+SpVgg Greuther Fürth
+FC Magdeburg
+FC Nürnberg
+FC Hansa Rostock
+FC Kaiserslautern
+SV Wehen Wiesbaden
+Eintracht Braunschweig
+Hertha BSC
+VfL Osnabrück
+SV 07 Elversberg 
