@@ -6,7 +6,8 @@ from pathlib import Path
 from fileops import load_json
 
 TEAM_SYNONYMES = load_json(
-    Path("team_synonymes.json"), "german_soccer_team_name_synonymes"
+    Path("team_synonymes.json"),
+    "german_soccer_team_name_synonymes",
 )
 
 
@@ -22,7 +23,7 @@ def clean_teamname(team_name: str) -> str:
 
 
 class Teams(enum.Enum):
-    """General Enumeration of german soccer teams (not limited to 1./2./3. Bundesliga)."""
+    """German soccer teams (not limited to 1./2./3. Bundesliga)."""
 
     Arminia_Bielefeld = enum.auto()
     Bayer_Leverkusen = enum.auto()
