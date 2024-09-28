@@ -1,3 +1,5 @@
+"""This module provides functionality to read and process tips from a file."""
+
 from dataclasses import dataclass
 from pathlib import Path
 
