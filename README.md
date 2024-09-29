@@ -7,8 +7,11 @@ This is WebApp for a private betting game, in which we guess the final ranking t
 ### List of open Points
 
 ```markdown
-[ ] Add timestamp of the data: "Last Updated: "
+[ ] Add Path resolving to get fully specified paths
+[ ] Add timeout and fallback strategy for the scraping job
+[ ] Add error handling in case sportschau.de is not reachable
 [ ] Add detailed points overview per player/per team
+[ ] Add timestamp of the data: "Last Updated: "
 [ ] Add badges to the website
 [ ] Use str-Enums
 [ ] Add rate limiting
