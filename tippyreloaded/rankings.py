@@ -6,8 +6,9 @@ from datetime import datetime
 import bs4
 import requests
 
-from stringmatching import best_string_enum_pairing
-from teamnames import Teams
+from tippyreloaded.config.datamodels import ScrapeTarget
+from tippyreloaded.config.enumerations import Teams
+from tippyreloaded.stringmatching import best_string_enum_pairing
 
 
 @dataclass
@@ -53,9 +54,6 @@ def convert_scrapings_to_ranking(scrapings: list[list[str]]) -> list[list[Teams]
         map_str_enum = best_string_enum_pairing(ranks_str, Teams, strict=False)
         ranks.append([map_str_enum[s] for s in ranks_str])
     return ranks
-
-
-from config import ScrapeTarget
 
 
 def get_rankings(targets: list[ScrapeTarget]) -> Ranking:

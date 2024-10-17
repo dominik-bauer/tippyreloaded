@@ -2,9 +2,9 @@
 
 from dataclasses import dataclass
 
-from rankings import Ranking
-from teamnames import Teams
-from tips import Tip
+from tippyreloaded.config.enumerations import Teams
+from tippyreloaded.rankings import Ranking
+from tippyreloaded.tips import Tip
 
 
 @dataclass
@@ -20,7 +20,7 @@ class PlayerDataSet:
 
     def __post_init__(self) -> None:
         """Check if the tips and reference rankings match."""
-        for t, r in zip(self.tipps, self._ref):
+        for t, r in zip(self.tipps, self._ref, strict=False):
             if set(t) != set(r):
                 t_diff = set(t) - set(r)
                 r_diff = set(r) - set(t)
@@ -36,7 +36,7 @@ class PlayerDataSet:
     def points_all(self) -> list[list[int]]:
         """Calculate points for all tips based on the reference rankings."""
         points = []
-        for t, r in zip(self.tipps, self._ref):
+        for t, r in zip(self.tipps, self._ref, strict=False):
             points.append(compute_points(t, r, self._points_by_diff))
         return points
 
@@ -74,7 +74,9 @@ def compute_points(
 
 
 def get_game_data(
-    ranks: Ranking, tips: list[Tip], points_by_diff: dict[int, int]
+    ranks: Ranking,
+    tips: list[Tip],
+    points_by_diff: dict[int, int],
 ) -> list[PlayerDataSet]:
     """Combine rankings and tips to compute the points and the ranking of each player."""
     game_data = []
@@ -96,3 +98,19 @@ def get_game_data(
 
     # sort the list by position and by name
     return sorted(game_data, key=lambda x: (x.position, x.name))
+
+
+if __name__ == "__main__":
+    # test the game data
+    from tippyreloaded.rankings import get_rankings
+    from tippyreloaded.tips import get_tips
+
+    ranks = get_rankings()
+    tips = get_tips()
+    game_data = get_game_data(ranks, tips)
+    for player in game_data:
+        print(player)
+        print(player.points_all)
+        print(player.points_sum)
+        print(player.points_total)
+        print()

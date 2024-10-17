@@ -1,10 +1,12 @@
-"""This module provides functionality to read and process tips from a file."""
+"""Read and process tips from a file."""
 
 from dataclasses import dataclass
 from pathlib import Path
 
-from stringmatching import convert_teamnames_to_enum, splice_list
-from teamnames import Teams
+from tippyreloaded.config import CONF
+from tippyreloaded.config.datamodels import GameConfig
+from tippyreloaded.config.enumerations import Teams
+from tippyreloaded.stringmatching import convert_teamnames_to_enum, splice_list
 
 
 @dataclass
@@ -16,7 +18,7 @@ class Tip:
 
 
 def read_tipps_file(file_path: Path) -> list[list[str]]:
-    """Reads tipps file and returns blocks of lines seperated by one or more blank lines.
+    """Read tips file and returns lineblocks seperated by >1 blank lines.
 
     The input file should be formatted as follows:
     - For each participating player a block of consecutive lines is created
@@ -52,3 +54,13 @@ def get_tips(tipps_file: Path, number_of_teams_per_url: list[int]) -> list[Tip]:
         all_tips.append(Tip(name, tip_enum_splitted))
 
     return all_tips
+
+
+def read_tips_from_conf(config: GameConfig) -> list[Tip]:
+    """Read tips from the configuration file."""
+    return get_tips(config.tips_file, config.number_of_teams_per_url)
+
+
+if __name__ == "__main__":
+    for x in CONF.tips:
+        print(x)
