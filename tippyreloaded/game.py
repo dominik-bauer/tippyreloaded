@@ -2,7 +2,7 @@
 
 from dataclasses import dataclass
 
-from tippyreloaded.config.enumerations import Teams
+from tippyreloaded.config.enumerations import Team
 from tippyreloaded.rankings import Ranking
 from tippyreloaded.tips import Tip
 
@@ -12,8 +12,8 @@ class PlayerDataSet:
     """Represents a player with their tips and points in the TippyTippsen game."""
 
     name: str
-    tipps: list[list[Teams]]
-    _ref: list[list[Teams]]
+    tipps: list[list[Team]]
+    _ref: list[list[Team]]
     _points_by_diff: dict[int, int]
 
     position: int = 0
@@ -56,8 +56,8 @@ class PlayerDataSet:
 
 
 def compute_points(
-    tipps: list[Teams],
-    ranks_reference: list[Teams],
+    tipps: list[Team],
+    ranks_reference: list[Team],
     points_by_diff: dict[int, int],
 ) -> list[int]:
     """Calculate all points based on the difference in positions between tipps and reference ranks."""

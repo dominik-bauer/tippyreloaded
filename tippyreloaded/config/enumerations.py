@@ -19,7 +19,7 @@ class League(StrEnum):
     Bundesliga3 = "3. Bundesliga"
 
 
-class Teams(StrEnum):
+class Team(StrEnum):
     """German soccer teams (not limited to 1./2./3. Bundesliga)."""
 
     Arminia_Bielefeld = "Arminia Bielefeld"
@@ -32,9 +32,9 @@ class Teams(StrEnum):
     Eintracht_Braunschweig = "Eintracht Braunschweig"
     Eintracht_Frankfurt = "Eintracht Frankfurt"
     Erzgebirge_Aue = "Erzgebirge Aue"
-    Fc_Augsburg = "FC Augsburg"
+    FC_Augsburg = "FC Augsburg"
     FC_Hansa_Rostock = "FC Hansa Rostock"
-    Fc_Heidenheim_1846 = "1. FC Heidenheim 1846"
+    FC_Heidenheim_1846 = "1. FC Heidenheim 1846"
     FC_Ingolstadt_04 = "FC Ingolstadt 04"
     FC_Kaiserslautern = "1. FC Kaiserslautern"
     FC_Koeln = "1. FC Köln"
@@ -42,9 +42,9 @@ class Teams(StrEnum):
     FC_Nuernberg = "1. FC Nürnberg"
     FC_Saarbruecken = "1. FC Saarbrücken"
     FC_Schalke_04 = "FC Schalke 04"
-    Fc_St_Pauli = "FC St. Pauli"
-    Fc_Union_Berlin = "1. FC Union Berlin"
-    Fsv_Mainz_05 = "1. FSV Mainz 05"
+    FC_St_Pauli = "FC St. Pauli"
+    FC_Union_Berlin = "1. FC Union Berlin"
+    FSV_Mainz_05 = "1. FSV Mainz 05"
     Fortuna_Duesseldorf = "Fortuna Düsseldorf"
     Hallescher_FC = "Hallescher FC"
     Hamburger_SV = "Hamburger SV"
