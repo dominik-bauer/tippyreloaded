@@ -6,24 +6,13 @@ from datetime import datetime
 import bs4
 import requests
 
-from tippyreloaded.config.datamodels import ScrapeTarget
-from tippyreloaded.config.enumerations import Teams
-from tippyreloaded.stringmatching import best_string_enum_pairing
-
-
-@dataclass
-class Ranking:
-    """Stores the rankings scraped from sportschau.de."""
-
-    target_urls: list[str]
-    league_names: list[str]
-    rankins_lengths: list[int]
-    rankings_ref: list[list[Teams]]
-    time_scraped: datetime
+from tippyreloaded.config.datamodels import ScrapeTarget, Ranking
+from tippyreloaded.config.enumerations import Team
+from tippyreloaded.stringmatching import convert_teamnames_to_ranking
 
 
 def scrape_sportschau(url: str, timeout: int = 10) -> list[str]:
-    """Scrapes the bundesliga tabelle from sportschau URL."""
+    """Scrapes a bundesliga tabelle from sportschau URL."""
     ranks = []
 
     # retrieve html code and load into bs4
@@ -42,21 +31,14 @@ def scrape_sportschau(url: str, timeout: int = 10) -> list[str]:
     return ranks
 
 
-def scrape_sportschau_multiple(urls: list[str]) -> list[list[str]]:
-    """Scrapes the bundesliga tabellen from multiple sportschau URLs."""
-    return [scrape_sportschau(url) for url in urls]
+def get_ranking(target: ScrapeTarget) -> Ranking:
+    """Scrapes and converts a table from a sportschau URL."""
+    ranks_str = scrape_sportschau(target.url)
+    ranks_enum = convert_teamnames_to_ranking(ranks_str, Team)
+    return Ranking(league_name=target.league_name, ranking=ranks_enum)
+    
 
-
-def convert_scrapings_to_ranking(scrapings: list[list[str]]) -> list[list[Teams]]:
-    """Scrapes the bundesliga tabelle from multiple sportschau URLs."""
-    ranks: list[list[Teams]] = []
-    for ranks_str in scrapings:
-        map_str_enum = best_string_enum_pairing(ranks_str, Teams, strict=False)
-        ranks.append([map_str_enum[s] for s in ranks_str])
-    return ranks
-
-
-def get_rankings(targets: list[ScrapeTarget]) -> Ranking:
+def get_rankings(targets: list[ScrapeTarget]) -> list[Ranking]:
     """Scrapes and converts the bundesliga tabellen from multiple sportschau URLs."""
     urls = [t.url for t in targets]
     names = [t.league_name for t in targets]

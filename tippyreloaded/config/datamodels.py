@@ -2,7 +2,7 @@
 
 from pydantic import BaseModel, HttpUrl
 
-from tippyreloaded.config.enumerations import League, Teams
+from tippyreloaded.config.enumerations import League
 
 
 class ScrapeTarget(BaseModel):
@@ -13,25 +13,19 @@ class ScrapeTarget(BaseModel):
     number_of_teams: int  # used to check scraping
 
 
-class LeagueTipStr(BaseModel):
-    """Represent the tips for a league."""
+class Ranking(BaseModel):
+    """Represent the actual or predicted ranking of a league."""
 
     league_name: League
-    predicted_ranking: list[str]
-
-
-class LeagueTip(BaseModel):
-    """Represent the tips for a league."""
-
-    league_name: League
-    predicted_ranking: list[Teams]
+    ranking: list[str]
+    # ranking: list[Team]
 
 
 class PlayersTip(BaseModel):
     """Represent the tips for a player."""
 
     player_name: str
-    league_tips: list[LeagueTipStr]
+    predicted_rankings: list[Ranking]
 
 
 class GameConfig(BaseModel):

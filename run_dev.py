@@ -1,21 +1,19 @@
-"""hello."""
+from pathlib import Path
+from pprint import pprint as print
 
-from tippyreloaded import create_app
+import ruamel.yaml as yaml1
+
+from tippyreloaded.config import CONF
 
 if __name__ == "__main__":
-    from tippyreloaded.config import CONF
-    from tippyreloaded.game import get_game_data
-    from tippyreloaded.rankings import get_rankings
-    from tippyreloaded.tips import get_tips
+    yml = yaml1.YAML(typ="safe", pure=True)
 
-    ranks = get_rankings(CONF.scrape_targets)
-    tips = get_tips(CONF.)
-    game_data = get_game_data(ranks, tips)
-    for player in game_data:
-        print(player)
-        print(player.points_all)
-        print(player.points_sum)
-        print(player.points_total)
-    exit()
-app = create_app()
-app.run()
+    print(CONF)
+
+    with Path("./tippyreloaded/config/config_game_2425.yaml").open() as f:
+        x = yml.load(f)
+
+    for k in x["tips"]:
+        print(k)
+        # print(v)
+        print("-" * 80)

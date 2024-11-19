@@ -28,15 +28,6 @@ def create_app() -> Flask:
         default_limits=["6 per minute"],
         storage_uri="memory://",
     )
-
-    @app.route("/test")
-    def test_endpoint() -> str:
-        return "up"
-    
-    from views import views
-    @app.route("/")
-
-
     return app
 
 
